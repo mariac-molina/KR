@@ -590,6 +590,7 @@ class GraphicEnvironment(XYEnvironment):
             self.visible = False
         self.bounded = boundary
         self.colors = color
+        print(self.colors)
 
     def get_world(self):
         """Returns all the items in the world in a format
@@ -603,7 +604,7 @@ class GraphicEnvironment(XYEnvironment):
                 row.append(self.list_things_at([x, y]))
             result.append(row)
         return result
-
+    
     """
     def run(self, steps=1000, delay=1):
         "" "Run the Environment for given number of time steps,
@@ -697,7 +698,7 @@ class VacuumEnvironment(XYEnvironment):
     performance measure is 100 for each dirt cleaned, and -1 for
     each turn taken."""
 
-    def __init__(self, width=10, height=10):
+    def __init__(self, width=3, height=3):
         super().__init__(width, height)
         self.add_walls()
 
